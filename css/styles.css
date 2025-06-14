@@ -65,7 +65,20 @@ header {
   transition: .5s;
 }
 
+.nav-item .nav-link {
+   background: #b3bff1;
+   border-radius: 4px;
+   border: 2px transparent transparent;
+   box-shadow: 0px 0px 12px 4px blue inset;
+   color: black;
+   font-weight: bold;
+   transition: background-color 0.3s ease;
+   cursor: pointer;
+}
+
 .navbar-nav .nav-item .nav-link:hover {
+  background-color: blue ; 
+  box-shadow: 0px 0px 12px 4px white inset;
   color: #000000;
 }
 
