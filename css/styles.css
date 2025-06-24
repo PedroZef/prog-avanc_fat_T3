@@ -257,7 +257,7 @@ header {
 }
 
 #bio {
-	max-width: 400px;
+	max-width: 600px;
 }
 
 .form-control.disabled {
@@ -275,7 +275,10 @@ header {
 	width: auto;
 }
 
-.form-group {
-	gap: 40px;
-	
+#change-password-container,
+.edit-profile-page .card-btn,
+#add-movie-container .card-btn,
+#review-form .btn {
+
+	width: 100%;
 }
