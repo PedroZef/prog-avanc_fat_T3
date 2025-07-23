@@ -11,8 +11,8 @@ $userData = $userDao->verifyToken(true);
 
 $fullName = $user->getFullName($userData);
 
-if ($userData->image == "user.png") {
-    $userData->image = "avatar.jpg";
+if ($userData->image == "") {
+    $userData->image = "user.jpg";
 }
 
 ?>

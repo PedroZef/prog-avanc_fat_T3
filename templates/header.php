@@ -5,6 +5,7 @@ require_once("db.php");
 require_once("models/Message.php");
 require_once("dao/UserDAO.php");
 
+
 $message = new Message($BASE_URL);
 
 $flassMessage = $message->getMessage();
@@ -19,12 +20,12 @@ $userDao = new UserDAO($conn, $BASE_URL);
 
 $userData = $userDao->verifyToken(false);
 
-?>
-<!DOCTYPE html>
-<html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
+    ?>
+<!DOCTYPE html>
+<html lang="pt-BR" class="<?= $_SESSION['theme'] ?>-theme">
+
+<head <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieStar</title>
     <link rel="short icon" href="<?= $BASE_URL ?>img/moviestar.ico" />
@@ -40,9 +41,9 @@ $userData = $userDao->verifyToken(false);
     <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
 </head>
 
-<body>
+<body data-bs-theme="<?= $_SESSION['theme'] ?>" class=" <?= $THEME ?> nav-link bg-secondary">
     <header>
-        <nav id="main-navbar" class="navbar navbar-expand-lg">
+        <nav id=" main-navbar" class="navbar navbar-expand-lg">
             <a href="<?= $BASE_URL ?>" class="navbar-brand">
                 <img src="<?= $BASE_URL ?>img/logo.svg" alt="MovieStar" id="logo">
                 <span id="moviestar-title">MovieStar</span>
@@ -84,6 +85,12 @@ $userData = $userDao->verifyToken(false);
                     <?php endif; ?>
                 </ul>
             </div>
+            <form method="POST" action="#">
+                <input type="hidden" name="change_theme" value="1">
+                <button type="submit" class="nav-link bg-secondary">
+                    Tema
+                </button>
+            </form>
         </nav>
     </header>
     <?php if (!empty($flassMessage["msg"])): ?>
@@ -91,3 +98,8 @@ $userData = $userDao->verifyToken(false);
         <p class="msg <?= $flassMessage["type"] ?>"><?= $flassMessage["msg"] ?></p>
     </div>
     <?php endif; ?>
+
+
+</body>
+
+</html>
