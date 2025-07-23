@@ -20,8 +20,8 @@ $userDao = new UserDAO($conn, $BASE_URL);
 
 $userData = $userDao->verifyToken(false);
 
+?>
 
-    ?>
 <!DOCTYPE html>
 <html lang="pt-BR" class="<?= $_SESSION['theme'] ?>-theme">
 
@@ -85,7 +85,7 @@ $userData = $userDao->verifyToken(false);
                     <?php endif; ?>
                 </ul>
             </div>
-            <form method="POST" action="#">
+            <form method="POST" action="#" class="theme-form">
                 <input type="hidden" name="change_theme" value="1">
                 <button type="submit" class="nav-link bg-secondary">
                     Tema
@@ -98,8 +98,6 @@ $userData = $userDao->verifyToken(false);
         <p class="msg <?= $flassMessage["type"] ?>"><?= $flassMessage["msg"] ?></p>
     </div>
     <?php endif; ?>
-
-
 </body>
 
 </html>

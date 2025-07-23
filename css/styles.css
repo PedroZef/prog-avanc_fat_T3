@@ -8,7 +8,18 @@ body {
     font-family: Arial, sans-serif;
 }
 
+form .theme-form {
+    display: flex;
+    flex-direction: center;
+    margin: 0.125em;
+    padding: 0.625em;
+    width: auto;
+}
+
 .nav-link .bg-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #545555;
     border: none;
     box-shadow: 0px 0px 0.75em 0.25em blue inset;
@@ -68,7 +79,7 @@ header {
 }
 
 .form-inline .form-control {
-    border: 1px solid #c0baba;
+    border: 0.0625em solid #c0baba;
     background-color: #c0baba;
     border-radius: 0.25em;
 }
@@ -323,4 +334,20 @@ header {
 #add-movie-container .card-btn,
 #review-form .btn {
     width: 100%;
+}
+
+@media screen and (max-width: 940px) {
+    .theme-form {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        border: none;
+        box-shadow: 0px 0px 0.75em 0.25em blue inset;
+        border-radius: 0.25em;
+        color: #000;
+    }
+
+    #search-form {
+        display: none;
+    }
 }
