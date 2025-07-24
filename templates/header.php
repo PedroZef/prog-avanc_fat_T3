@@ -88,7 +88,7 @@ $userData = $userDao->verifyToken(false);
             <form method="POST" action="#" class="theme-form">
                 <input type="hidden" name="change_theme" value="1">
                 <button type="submit" class="nav-link bg-secondary">
-                    Tema
+                    <i class="fas fa-moon"></i>
                 </button>
             </form>
         </nav>

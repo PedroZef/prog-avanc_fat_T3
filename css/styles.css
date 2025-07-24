@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-form .theme-form {
+.theme-form {
     display: flex;
     flex-direction: center;
     margin: 0.125em;
@@ -18,19 +18,23 @@ form .theme-form {
 
 .nav-link .bg-secondary {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #545555;
-    border: none;
-    box-shadow: 0px 0px 0.75em 0.25em blue inset;
+    background: #b3bff1;
     border-radius: 0.25em;
-    color: #000;
+    border: 0.125em transparent transparent;
+    box-shadow: 0px 0px 0.75em 0.25em blue inset;
+    padding: 0.625em 1.25em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
+.theme-form:hover,
 .nav-link .bg-secondary:hover {
-    background-color: #ffffff;
+    background-color: blue;
+    box-shadow: 0px 0px 0.75em 0.25em white inset;
+    color: #fff;
     border-radius: 0.25em;
-    color: #ffffff;
+    cursor: pointer;
 }
 
 /* Navbar */
