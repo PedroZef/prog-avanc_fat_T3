@@ -5,15 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-}
-
-.theme-form {
-    display: flex;
-    flex-direction: center;
-    margin: 0.125em;
-    padding: 0.625em;
-    width: auto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-link .bg-secondary {
@@ -28,7 +20,6 @@ body {
     cursor: pointer;
 }
 
-.theme-form:hover,
 .nav-link .bg-secondary:hover {
     background-color: blue;
     box-shadow: 0px 0px 0.75em 0.25em white inset;
@@ -57,11 +48,6 @@ header {
     font-size: 2em;
     font-weight: bold;
     color: #fff;
-}
-
-#main-navbar {
-    background-color: #9cf405;
-    padding: 0.625em;
 }
 
 /* Estilização do formulário de busca */
@@ -103,7 +89,6 @@ header {
 /* Ajustes na navbar */
 .navbar-nav {
     display: flex;
-
     align-items: center;
     justify-content: flex-end;
     width: auto;
@@ -111,6 +96,7 @@ header {
 
 .navbar-nav .nav-item {
     margin-left: 1.25em;
+    gap: 1.5em;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -151,7 +137,7 @@ header {
 
 /* Footer */
 #footer {
-    background-color: #333;
+    background-color: #444;
     border-top: 0.125em solid blue;
     color: #f8bb04;
     text-align: center;
@@ -340,17 +326,38 @@ header {
     width: 100%;
 }
 
-@media screen and (max-width: 940px) {
-    .theme-form {
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
-        border: none;
-        box-shadow: 0px 0px 0.75em 0.25em blue inset;
-        border-radius: 0.25em;
-        color: #000;
-    }
+th {
+    background-color: #ffffff;
+    color: #000;
+}
 
+/* Tema claro */
+[data-bs-theme='light'] .theme-toggle-btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Tema escuro */
+[data-bs-theme='dark'] .theme-toggle-btn {
+    background-color: #121212;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.theme-toggle-btn i {
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 762px) {
+    .nav-item .nav-link {
+        padding: 0.625em;
+        font-size: 1em;
+        line-height: 3;
+        margin-bottom: 0.5em;
+    }
     #search-form {
         display: none;
     }

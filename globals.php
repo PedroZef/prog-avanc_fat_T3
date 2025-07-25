@@ -10,6 +10,7 @@ if (!isset($_SESSION["theme"])) {
 $THEME = $_SESSION["theme"] === "dark" ? "bg-dark text-white" : "bg-light text-dark";
 ?>
 
+
 <?php
 
 $BASE_URL = "http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["REQUEST_URI"] . "?") . "/";

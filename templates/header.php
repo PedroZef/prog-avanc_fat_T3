@@ -23,7 +23,7 @@ $userData = $userDao->verifyToken(false);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR" class="<?= $_SESSION['theme'] ?>-theme">
+<html lang="pt-BR" data-bs-theme="auto">
 
 <head <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,14 +83,21 @@ $userData = $userDao->verifyToken(false);
                         <a href="<?= $BASE_URL ?>auth.php" class="nav-link">Entrar / Cadastrar</a>
                     </li>
                     <?php endif; ?>
+
+                    <li class="nav-item">
+                        <form method="POST" action="#">
+                            <input type="hidden" name="change_theme" value="1">
+                            <button type="submit" class="nav-link bg-secondary border=0">
+                                <?php if ($_SESSION['theme'] === 'dark'): ?>
+                                <i class="fas fa-sun"></i>
+                                <?php else: ?>
+                                <i class="fas fa-moon"></i>
+                                <?php endif; ?>
+                            </button>
+                        </form>
+                    </li>
                 </ul>
             </div>
-            <form method="POST" action="#" class="theme-form">
-                <input type="hidden" name="change_theme" value="1">
-                <button type="submit" class="nav-link bg-secondary">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </form>
         </nav>
     </header>
     <?php if (!empty($flassMessage["msg"])): ?>
