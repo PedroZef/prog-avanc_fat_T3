@@ -25,7 +25,9 @@ body {
     box-shadow: 0px 0px 0.75em 0.25em white inset;
     color: #fff;
     border-radius: 0.25em;
+    border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 /* Navbar */
@@ -40,11 +42,11 @@ header {
 }
 
 #logo {
-    width: 5em;
+    width: 3em;
     margin-right: 0.625em;
 }
 
-#filmes-title {
+#moviestar-title {
     font-size: 2em;
     font-weight: bold;
     color: #fff;
@@ -94,9 +96,15 @@ header {
     width: auto;
 }
 
+.nav-item.nav-link .bg-secondary {
+    display: flex;
+    border: none;
+    margin-left: auto;
+}
+
 .navbar-nav .nav-item {
     margin-left: 1.25em;
-    gap: 1.5em;
+    padding: 0.625em 0.5em;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -105,10 +113,10 @@ header {
 }
 
 .nav-item .nav-link {
-    background: #b3bff1;
+    background: #1842e7;
     border-radius: 0.25em;
     border: 0.125em transparent transparent;
-    box-shadow: 0px 0px 0.75em 0.25em blue inset;
+    box-shadow: 0px 0px 0.75em 0.25em rgb(62, 62, 151) inset;
     padding: 0.625em 1.25em;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -116,14 +124,18 @@ header {
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    background-color: blue;
-    box-shadow: 0px 0px 0.75em 0.25em white inset;
-    color: #fff;
+    background-color: rgb(58, 58, 233);
+    box-shadow: 0px 0px 0.75em 0.25em rgb(123, 200, 167) inset;
+    color: #ffffff;
+    border-radius: 0.2em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 /* Home */
 #main-container {
-    background-color: #000;
+    background-color: #192d2da1;
     color: #fff;
     min-height: 65vh;
     padding: 2.5em;
@@ -137,9 +149,8 @@ header {
 
 /* Footer */
 #footer {
-    background-color: #444;
-    border-top: 0.125em solid blue;
-    color: #f8bb04;
+    background-color: #192d2da1;
+    border-bottom: 0.0625em solid #1842e7;
     text-align: center;
     margin: 0;
     padding: 1.25em;
@@ -204,6 +215,7 @@ header {
 
 #login-container form,
 #register-container form {
+    border: none;
     max-width: 25em;
     margin: 1.875em auto;
 }
@@ -332,8 +344,8 @@ th {
 }
 
 /* Tema claro */
-[data-bs-theme='light'] .theme-toggle-btn {
-    background-color: #f0f0f0;
+[data-bs-theme='light'] .theme-toggle-btn,
+#moviestar-title {
     border: none;
     color: #000;
     cursor: pointer;
@@ -341,7 +353,7 @@ th {
 
 /* Tema escuro */
 [data-bs-theme='dark'] .theme-toggle-btn {
-    background-color: #121212;
+    background-color: #192d2da1;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -358,7 +370,19 @@ th {
         line-height: 3;
         margin-bottom: 0.5em;
     }
+
+    .nav-item .nav-link .bg-secondary {
+        display: flex;
+        border: none;
+    }
+
     #search-form {
         display: none;
+    }
+
+    .navbar-toggler:hover {
+        display: block;
+        background-color: #f5c518;
+        color: #000;
     }
 }

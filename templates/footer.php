@@ -22,7 +22,7 @@
             </ul>
         </div>
         <p>
-            <a href="https://pedrozef.github.io/dio-lab-portfolio-2024/" class="text-decoration-none">&copy; 2025 -
+            <a href="https://github.com/PedroZef/prog-avanc_fat_T3" class="text-decoration-none">&copy; 2025 -
                 Pedro
                 Zeferino da Silva 🚀</a>
         </p>

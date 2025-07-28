@@ -5,7 +5,7 @@ require_once("templates/header.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="auto">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@ require_once("templates/header.php");
 </head>
 
 
-<body class=" <?= $THEME ?> nav-link bg-secondary">
+<body class="<?= $THEME ?>   nav-link bg-secondary">
     <div id="main-container" class="container-fluid">
         <h1>Conteúdo</h1>
     </div>
