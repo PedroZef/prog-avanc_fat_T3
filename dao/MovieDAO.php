@@ -36,7 +36,7 @@
 
       $rating = $reviewDao->getRatings($movie->id);
 
-      $movie->rating = $rating;
+      $movie->$rating = $rating;
 
       return $movie;
 

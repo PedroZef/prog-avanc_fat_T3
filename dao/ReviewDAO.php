@@ -77,7 +77,7 @@ class ReviewDao implements ReviewDAOInterface
 				// Chamar dados do usuário
 				$user = $userDao->findById($reviewObject->users_id);
 
-				$reviewObject->user = $user;
+				$reviewObject->$user = $user;
 
 				$reviews[] = $reviewObject;
 			}

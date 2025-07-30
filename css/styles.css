@@ -1,14 +1,9 @@
-/* Reset CSS styles */
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
 }
 
 .nav-link .bg-secondary {
+    align-items: center;
     display: flex;
     background: #b3bff1;
     border-radius: 0.25em;
@@ -17,6 +12,7 @@ body {
     padding: 0.625em 1.25em;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -113,7 +109,7 @@ header {
 }
 
 .nav-item .nav-link {
-    background: #1842e7;
+    background-color: #1842e7;
     border-radius: 0.25em;
     border: 0.125em transparent transparent;
     box-shadow: 0px 0px 0.75em 0.25em rgb(62, 62, 151) inset;
@@ -125,7 +121,7 @@ header {
 
 .navbar-nav .nav-item .nav-link:hover {
     background-color: rgb(58, 58, 233);
-    box-shadow: 0px 0px 0.75em 0.25em rgb(123, 200, 167) inset;
+    box-shadow: 0px 0px 0.75em 0.25em rgb(38, 24, 228) inset;
     color: #ffffff;
     border-radius: 0.2em;
     border: none;
@@ -151,8 +147,8 @@ header {
 #footer {
     background-color: #192d2da1;
     border-bottom: 0.0625em solid #1842e7;
+    color: #fff;
     text-align: center;
-    margin: 0;
     padding: 1.25em;
 }
 
@@ -378,11 +374,5 @@ table {
 
     #search-form {
         display: none;
-    }
-
-    .navbar-toggler:hover {
-        display: block;
-        background-color: #f5c518;
-        color: #000;
     }
 }
