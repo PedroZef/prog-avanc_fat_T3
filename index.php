@@ -16,7 +16,7 @@ require_once("templates/header.php");
 
 <body>
     <div id="main-container" class="container-fluid">
-        <h1 style="text-align: center;" class="page-title text-blue">Bem-vindo ao MovieStar!
+        <h1 style="text-align: center;" class="page-title">Bem-vindo ao MovieStar!
         </h1>
 
     </div>

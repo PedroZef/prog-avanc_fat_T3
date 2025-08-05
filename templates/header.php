@@ -41,7 +41,7 @@ $userData = $userDao->verifyToken(false);
     <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
 </head>
 
-<body data-bs-theme="<?= $_SESSION['theme'] ?>" class=" <?= $THEME ?>  nav-link bg-secondary ">
+<body data-bs-theme="<?= $_SESSION['theme'] ?>" class=" <?= $THEME ?> nav-link bg-secondary">
     <header>
         <nav id=" main-navbar" class="navbar navbar-expand-lg">
             <a href="<?= $BASE_URL ?>" class="navbar-brand">
