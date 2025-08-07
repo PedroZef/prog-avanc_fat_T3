@@ -41,7 +41,7 @@ $userData = $userDao->verifyToken(false);
     <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
 </head>
 
-<body data-bs-theme="<?= $_SESSION['theme'] ?>" class=" <?= $THEME ?> nav-link bg-secondary">
+<body data-bs-theme="<?= $_SESSION['theme'] ?>" class=" <?= $THEME ?> nav-link bg-secondary text-light">
     <header>
         <nav id=" main-navbar" class="navbar navbar-expand-lg">
             <a href="<?= $BASE_URL ?>" class="navbar-brand">
@@ -87,7 +87,7 @@ $userData = $userDao->verifyToken(false);
                     <li class="nav-item">
                         <form method="POST" action="#">
                             <input type="hidden" name="change_theme" value="1">
-                            <button type="submit" class="nav-link bg-secondary border=0">
+                            <button type="submit" class="nav-link bg-secondary text-light border=0">
                                 <?php if ($_SESSION['theme'] === 'dark'): ?>
                                 <i class="fas fa-sun"></i>
                                 <?php else: ?>

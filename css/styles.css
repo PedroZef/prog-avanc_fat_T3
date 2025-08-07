@@ -340,15 +340,16 @@ table {
 }
 
 /* Tema claro */
-[data-bs-theme='light'] .theme-toggle-btn,
-#moviestar-title {
+[data-bs-theme='light'] .page-title,
+[data-bs-theme='light'] #moviestar-title {
     border: none;
     color: #000;
     cursor: pointer;
 }
 
 /* Tema escuro */
-[data-bs-theme='dark'] .theme-toggle-btn {
+[data-bs-theme='dark'] .page-title,
+[data-bs-theme='dark'] #moviestar-title {
     background-color: #192d2da1;
     border: none;
     color: #fff;
