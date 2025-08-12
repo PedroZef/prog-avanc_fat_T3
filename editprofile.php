@@ -1,9 +1,20 @@
 <?php
 require_once "templates/header.php";
-
 require_once "models/User.php";
 require_once "dao/UserDAO.php";
+require_once "globals.php";
+require_once "models/Message.php";
+$message = new Message($BASE_URL);
+$flash = $message->getMessage();
 
+if ($flash !== false): ?>
+<div class="alert alert-<?= htmlspecialchars($flash["type"]) ?> text-center mt-3">
+    <?= htmlspecialchars($flash["msg"]) ?>
+</div>
+<?php $message->clearMessage(); ?>
+<?php endif; ?>
+
+<?php
 $user = new User();
 $userDao = new UserDao($conn, $BASE_URL);
 
@@ -12,7 +23,7 @@ $userData = $userDao->verifyToken(true);
 $fullName = $user->getFullName($userData);
 
 if ($userData->image == "") {
-    $userData->image = "user.jpg";
+$userData->image = "user.jpg";
 }
 
 ?>
