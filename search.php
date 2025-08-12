@@ -1,11 +1,11 @@
 <?php
-require_once("templates/header.php");
+require_once "templates/header.php";
 
 // Certifique-se de incluir o arquivo de configuração do banco de dados e variáveis globais
-require_once("db.php"); // ajuste o caminho se necessário
-require_once("globals.php"); // ajuste o caminho se necessário
+require_once "db.php"; // ajuste o caminho se necessário
+require_once "globals.php"; // ajuste o caminho se necessário
 
-require_once("dao/MovieDAO.php");
+require_once "dao/MovieDAO.php";
 
 // DAO dos filmes
 $movieDao = new MovieDAO($conn, $BASE_URL);
@@ -30,5 +30,5 @@ $movies = $movieDao->findByTitle($q);
     </div>
 </div>
 <?php
-require_once("templates/footer.php");
+require_once "templates/footer.php";
 ?>

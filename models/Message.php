@@ -4,8 +4,6 @@
 class Message
 {
 
-
-
 	private $url;
 
 

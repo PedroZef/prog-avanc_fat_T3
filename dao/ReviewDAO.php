@@ -1,9 +1,9 @@
 <?php
 
-require_once("models/Review.php");
-require_once("models/Message.php");
+require_once "models/Review.php";
+require_once "models/Message.php";
 
-require_once("dao/UserDAO.php");
+require_once "dao/UserDAO.php";
 
 class ReviewDao implements ReviewDAOInterface
 {

@@ -2,40 +2,40 @@
 
 ## Descrição
 
-Projeto para o Curso de Desenvolvimento de Sistemas na FAT - Fundação ao Apoio à Tecnologia - SP
+-   Projeto para o Curso de Desenvolvimento de Sistemas na FAT - Fundação ao Apoio à Tecnologia - SP
 
-Funcionalidades principais:
+## Funcionalidades principais:
 
-- Cadastro, atualização, edição e exclusão de registros [CRUD]
-- Visualização de Filmes
-- Interface web amigável
+-   Cadastro, atualização, edição e exclusão de registros [CRUD]
+-   Visualização de Filmes
+-   Interface web amigável
 
 Tecnologias utilizadas: PHP, MySQL, HTML, CSS, JavaScript.
 
 ## Pré-requisitos
 
-- PHP >= 8.0
-- MySQL
-- XAMPP instalado
+-   PHP >= 8.0
+-   MySQL
+-   XAMPP instalado
 
 ## Instalação
 
 1. **Clone o repositório**
-   ```bash
-   git clone https://github.com/seu-usuario/prog-avanc_fat_T3.git
-   ```
+    ```bash
+    git clone https://github.com/seu-usuario/prog-avanc_fat_T3.git
+    ```
 2. **Copie a pasta para o XAMPP**
 
-   - Mova a pasta clonada para o diretório `htdocs` do XAMPP (exemplo: `C:\xampp\htdocs\prog-avanc_fat_T3`).
+    - Mova a pasta clonada para o diretório `htdocs` do XAMPP (exemplo: `C:\xampp\htdocs\prog-avanc_fat_T3`).
 
 3. **Configure o banco de dados**
 
-   - Abra o XAMPP e inicie o Apache e o MySQL.
-   - Acesse o phpMyAdmin pelo navegador: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
-   - Clique em "Importar" e selecione o arquivo `.sql` localizado na pasta `/moviestar` do projeto.
+    - Abra o XAMPP e inicie o Apache e o MySQL.
+    - Acesse o phpMyAdmin pelo navegador: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+    - Clique em "Importar" e selecione o arquivo `.sql` localizado na pasta `/moviestar` do projeto.
 
 4. **Configure o arquivo de conexão**
-   - Se necessário, edite o arquivo de configuração do banco de dados (ex: `config.php`) com usuário, senha e nome do banco.
+    - Se necessário, edite o arquivo de configuração do banco de dados (ex: `config.php`) com usuário, senha e nome do banco.
 
 ## Como usar
 
@@ -47,12 +47,12 @@ Tecnologias utilizadas: PHP, MySQL, HTML, CSS, JavaScript.
 ## Estrutura do Projeto
 
 -
-- `/dao(Data Access Object)` — acesso e manipulação dos dados no banco(CRUD)
-- `/models` — Armazena as classes das entendidades do Sistema
-- `/globals` — conexão com o banco de dados
-- `/img` — arquivos públicos (imagens, uploads)
-- `README.md` — Instruções e descrição do projeto
-- `db.php` — configuração do banco de dados
+-   `/dao(Data Access Object)` — acesso e manipulação dos dados no banco(CRUD)
+-   `/models` — Armazena as classes das entendidades do Sistema
+-   `/globals` — conexão com o banco de dados
+-   `/img` — arquivos públicos (imagens, uploads)
+-   `README.md` — Instruções e descrição do projeto
+-   `db.php` — configuração do banco de dados
 
 ## Contribuição
 

@@ -21,7 +21,6 @@ class Movie
 	public $users_id;
 
 
-
 	public function imageGenerateName()
 	{
 
