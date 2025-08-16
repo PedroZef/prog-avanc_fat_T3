@@ -1,6 +1,6 @@
 <?php
 
-require_once("templates/header.php");
+require_once "templates/header.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ require_once("templates/header.php");
 
     </div>
     <?php
-    require_once("templates/footer.php");
+    require_once "templates/footer.php";
     ?>
 </body>
 
