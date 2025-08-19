@@ -1,12 +1,11 @@
 <?php
 require_once "templates/header.php";
-require_once "db.php";
 
 // Verifica se usuário está autenticado
 require_once "models/User.php";
 require_once "dao/UserDAO.php";
 require_once "dao/MovieDAO.php";
-
+ 
 $user = new User();
 $userDao = new UserDao($conn, $BASE_URL);
 $movieDao = new MovieDAO($conn, $BASE_URL);
@@ -26,7 +25,6 @@ $userMovies = $movieDao->getMoviesByUserId($userData->id);
     </div>
     <div class="col-md-12" id="movies-dashboard">
         <table class="table">
-
             <thead>
                 <th scope="col">#</th>
                 <th scope="col">Título</th>
@@ -39,7 +37,7 @@ $userMovies = $movieDao->getMoviesByUserId($userData->id);
                     <td scope="row"><?= $movie->id ?></td>
                     <td><a href="<?= $BASE_URL ?>movie.php?id=<?= $movie->id ?>"
                             class="table-movie-title"><?= $movie->title ?></a></td>
-                    <td><i class="fas fa-star"></i> <?= $movie->$rating ?></td>
+                    <td><i class="fas fa-star"></i> <?= $movie->rating ?></td>
                     <td class="actions-column">
                         <a href="<?= $BASE_URL ?>editmovie.php?id=<?= $movie->id ?>" class="edit-btn">
                             <i class="far fa-edit"></i> Editar

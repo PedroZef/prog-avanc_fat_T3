@@ -19,6 +19,8 @@ class Movie
 	public $length;
 
 	public $users_id;
+	
+	public $rating;
 
 
 	public function imageGenerateName()

@@ -1,30 +1,30 @@
 <?php
-  require_once "templates/header.php";
+require_once "templates/header.php";
 
-  // Verifica se usuário está autenticado
-  require_once "models/Movie.php";
-  require_once "dao/MovieDAO.php";
-  require_once "dao/ReviewDAO.php";
+// Verifica se usuário está autenticado
+require_once "models/Movie.php";
+require_once "dao/MovieDAO.php";
+require_once "dao/ReviewDAO.php";
 
   // Pegar o id do filme
   $id = filter_input(INPUT_GET, "id");
 
-  $movie;
+$movie;
 
-  $movieDao = new MovieDAO($conn, $BASE_URL);
+
+$movieDao = new MovieDAO($conn, $BASE_URL);
 
   $reviewDao = new ReviewDAO($conn, $BASE_URL);
 
-  if(empty($id)) {
+if (empty($id)) {
 
-    $message->setMessage("O filme não foi encontrado!", "error", "index.php");
+  $message->setMessage("O filme não foi encontrado!", "error", "index.php");
+} else {
 
-  } else {
+  $movie = $movieDao->findById($id);
 
-    $movie = $movieDao->findById($id);
-
-    // Verifica se o filme existe
-    if(!$movie) {
+  // Verifica se o filme existe
+  if (!$movie) {
 
       $message->setMessage("O filme não foi encontrado!", "error", "index.php");
 
@@ -51,8 +51,8 @@
  
   }
 
-  // Resgatar as reviews do filme
-  $movieReviews = $reviewDao->getMoviesReview($movie->id);
+// Resgatar as reviews do filme
+$movieReviews = $reviewDao->getMoviesReview($movie->id);
 
 ?>
 <div id="main-container" class="container-fluid">
@@ -64,7 +64,7 @@
                 <span class="pipe"></span>
                 <span><?= $movie->category ?></span>
                 <span class="pipe"></span>
-                <span><i class="fas fa-star"></i> <?= $movie->$rating ?></span>
+                <span><i class="fas fa-star"></i> <?= $movie->rating ?></span>
             </p>
             <iframe src="<?= $movie->trailer ?>" width="560" height="315" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encryted-media; gyroscope; picture-in-picture"
@@ -111,15 +111,15 @@
             </div>
             <?php endif; ?>
             <!-- Comentários -->
-            <?php foreach($movieReviews as $review): ?>
+            <?php foreach ($movieReviews as $review): ?>
             <?php require("templates/user_review.php"); ?>
             <?php endforeach; ?>
-            <?php if(count($movieReviews) == 0): ?>
+            <?php if (count($movieReviews) == 0): ?>
             <p class="empty-list">Não há comentários para este filme ainda...</p>
             <?php endif; ?>
         </div>
     </div>
 </div>
 <?php
-  require_once("templates/footer.php");
+require_once("templates/footer.php");
 ?>
