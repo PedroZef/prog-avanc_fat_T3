@@ -489,30 +489,43 @@ table {
 }
 
 #movies-dashboard .table {
-    color: #fff;
+    color: #000000;
 }
 
 #movies-dashboard .table th {
     border-top: none;
+    font-weight: bold;
 }
 
 #movies-dashboard .table tr {
+    align-items: justify;
+    color: #4157af;
     padding: 15px 0;
 }
 
+#movies-dashboard .table i {
+    color: #f5c518;
+}
+
 .table-movie-title {
-    color: #fff;
+    align-self: justify;
+    color: #3c05f1;
     font-weight: bold;
     transition: 0.5s;
 }
 
 .table-movie-title:hover {
-    color: #f5c518;
+    color: #3c05f1;
 }
 
 .actions-column {
     max-width: 75px;
     text-align: center;
+    font-weight: bold;
+}
+.actions-column th {
+    color: #000;
+    font-weight: bold;
 }
 
 .actions-column form {
