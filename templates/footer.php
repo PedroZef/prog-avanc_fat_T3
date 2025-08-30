@@ -1,4 +1,4 @@
-<body>
+<body data-theme="auto">
 
     <footer id="footer">
         <div id="social-container">

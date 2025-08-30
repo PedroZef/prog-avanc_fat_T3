@@ -8,9 +8,9 @@ $user = new User();
 $userDao = new UserDao($conn, $BASE_URL);
 $userData = $userDao->verifyToken(true);
 ?>
-<div id="main-container" class="container-fluid">
-    <div class="offset-md-4 col-md-4 new-movie-container">
-        <h1 class="page-title">Adicionar Filme</h1>
+<div id="main-container" class="container-fluid ">
+    <div class="offset-md-4 col-md-4 new-movie-container ">
+        <h1 class="page-title bg-secondary text-dark">Adicionar Filme</h1>
         <p class="page-description">Adicione sua crítica e compartilhe com o mundo!</p>
         <form action="<?= $BASE_URL ?>movie_process.php" id="add-movie-form" method="POST"
             enctype="multipart/form-data">
