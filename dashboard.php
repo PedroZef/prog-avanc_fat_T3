@@ -20,7 +20,7 @@ $userMovies = $movieDao->getMoviesByUserId($userData->id);
     <p class="section-description">Adicione ou atualize as informações dos filmes que você enviou</p>
     <div class="col-md-12" id="add-movie-container text-center">
         <a href="<?= $BASE_URL ?>newmovie.php" class="btn card-btn bg-secondary text-dark">
-            <i class="fas fa-plus   "></i> Adicionar Filme
+            <i class="fas fa-plus"></i> Adicionar Filme
         </a>
     </div>
     <div class="col-md-12" id="movies-dashboard">

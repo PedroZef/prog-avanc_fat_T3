@@ -82,10 +82,10 @@ $userData = $userDao->verifyToken(false);
                             <input type="hidden" name="change_theme" value="1">
                             <button type="submit" class="nav-link bg-secondary text-light bg-white text-dark border-0"
                                 style=" outline:none; text-align:end;">
-                                <?php if ($_SESSION['theme'] === 'white'): ?>
+                                <?php if ($_SESSION['theme'] === 'dark'): ?>
                                 <i class="fas fa-sun bg-warning"></i>
                                 <?php else: ?>
-                                <i class="fas fa-moon bg-warning"></i>
+                                <i class="fas fa-moon color-white"></i>
                                 <?php endif; ?>
                             </button>
                         </form>
