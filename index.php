@@ -1,17 +1,21 @@
 <?php
 
 require_once "templates/header.php";
+
+require_once "dao/MovieDAO.php";
+
+// Dao dos Filmes
+$movieDao = new MovieDAO($conn, $BASE_URL);
+
+$lastestMovies = $movieDao->getLatestMovies();
+
+$actionMovies = $movieDao->getMoviesByCategory("Ação");
+
+$comedyMovies = $movieDao->getMoviesByCategory("Comédia");
+
+$dramaMovies = $movieDao->getMoviesByCategory("Drama");
+
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR" data-bs-theme="auto">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovieStar</title>
-    <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
-</head>
 
 <body>
     <div id="main-container" class="container-fluid">
@@ -23,5 +27,3 @@ require_once "templates/header.php";
     require_once "templates/footer.php";
     ?>
 </body>
-
-</html>

@@ -6,55 +6,49 @@ require_once "models/Movie.php";
 require_once "dao/MovieDAO.php";
 require_once "dao/ReviewDAO.php";
 
-  // Pegar o id do filme
-  $id = filter_input(INPUT_GET, "id");
+// Pegar detalhes do usuário pelo id do get
+$id = filter_input(INPUT_GET, 'id');
 
 $movie;
 
-
 $movieDao = new MovieDAO($conn, $BASE_URL);
-
-  $reviewDao = new ReviewDAO($conn, $BASE_URL);
 
 if (empty($id)) {
 
-  $message->setMessage("O filme não foi encontrado!", "error", "index.php");
+  $message->setMessage("Filme não encontrado.", "error", "index.php");
 } else {
 
   $movie = $movieDao->findById($id);
 
-  // Verifica se o filme existe
+  // Caso não encontre usuário
   if (!$movie) {
-
-      $message->setMessage("O filme não foi encontrado!", "error", "index.php");
-
-    }
-
+    $message->setMessage("Filme não encontrado.", "error", "index.php");
   }
+}
 
-  // Checar se o filme tem imagem
-  if($movie->image == "") {
-    $movie->image = "movie_cover.jpg";
+// Checando se o filme é do usuário
+$userOwnsMovie = false;
+
+if (!empty($userData)) {
+
+  if ($userData->id === $movie->users_id) {
+    $userOwnsMovie = true;
   }
-
-  // Checar se o filme é do usuário
-  $userOwnsMovie = false;
-
-  if(!empty($userData)) {
-
-    if($userData->id === $movie->users_id) {
-      $userOwnsMovie = true;
-    }
-
-    // Resgatar as revies do filme
-    $alreadyReviewed = $reviewDao->hasAlreadyReviewed($id, $userData->id);
- 
-  }
+}
 
 // Resgatar as reviews do filme
-$movieReviews = $reviewDao->getMoviesReview($movie->id);
+$reviewDao = new ReviewDAO($conn, $BASE_URL);
+
+$movieReviews = $reviewDao->getMoviesReview($id);
+
+// Só faz estas checagens se o usuário estiver logado
+if (!empty($userData)) {
+  // Verifica se já fez review
+  $alreadyReviewed = $reviewDao->hasAlreadyReviewed($id, $userData->id);
+}
 
 ?>
+
 <div id="main-container" class="container-fluid">
     <div class="row">
         <div class="offset-md-1 col-md-6 movie-container">
@@ -78,7 +72,7 @@ $movieReviews = $reviewDao->getMoviesReview($movie->id);
         <div class="offset-md-1 col-md-10" id="reviews-container">
             <h3 id="reviews-title">Avaliações:</h3>
             <!-- Verifica se habilita a review para o usuário ou não -->
-            <?php if(!empty($userData) && !$userOwnsMovie && !$alreadyReviewed): ?>
+            <?php if (!empty($userData) && !$userOwnsMovie && !$alreadyReviewed): ?>
             <div class="col-md-12" id="review-form-container">
                 <h4>Envie sua avaliação:</h4>
                 <p class="page-description">Preencha o formulário com a nota e comentário sobre o filme</p>
